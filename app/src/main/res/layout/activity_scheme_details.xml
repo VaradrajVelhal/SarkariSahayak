@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Scheme Details"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:id="@+id/tvSchemeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scheme Name"
+                android:textSize="@dimen/text_size_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSchemeCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Category"
+                android:textSize="@dimen/text_size_body"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/tvEligibilityStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingStart="@dimen/spacing_medium"
+                android:paddingEnd="@dimen/spacing_medium"
+                android:paddingTop="@dimen/spacing_xs"
+                android:paddingBottom="@dimen/spacing_xs"
+                android:text="Status"
+                android:textSize="@dimen/text_size_subtitle"
+                android:textStyle="bold" />
+
+            <!-- Description Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSchemeDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Description text goes here."
+                        android:textSize="@dimen/text_size_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Eligibility Rules Evaluation Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eligibility Criteria &amp; Evaluation"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSchemeEligibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Eligibility details go here."
+                        android:textSize="@dimen/text_size_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Required Documents Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Required Documents"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSchemeDocuments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Required documents go here."
+                        android:textSize="@dimen/text_size_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Official Link Button -->
+            <Button
+                android:id="@+id/btnOfficialLink"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="Visit Official Scheme Portal"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="Back to Results" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+```
+
+Let's write `res/layout/activity_scheme_details.xml`.
+
+Now update `SchemeDetailsActivity.java`:
+```java
+package com.example.sarkarisahayak;
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sarkarisahayak.api.model.SchemeResult;
+import com.example.sarkarisahayak.utils.ThemeManager;
+import com.example.sarkarisahayak.utils.UiUtils;
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.gson.Gson;
+
+public class SchemeDetailsActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager.applyTheme(this);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scheme_details);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        UiUtils.setupToolbar(this, toolbar, "Scheme Details", true);
+
+        TextView tvSchemeName = findViewById(R.id.tvSchemeName);
+        TextView tvSchemeCategory = findViewById(R.id.tvSchemeCategory);
+        TextView tvEligibilityStatus = findViewById(R.id.tvEligibilityStatus);
+        TextView tvSchemeDescription = findViewById(R.id.tvSchemeDescription);
+        TextView tvSchemeEligibility = findViewById(R.id.tvSchemeEligibility);
+        TextView tvSchemeDocuments = findViewById(R.id.tvSchemeDocuments);
+        Button btnOfficialLink = findViewById(R.id.btnOfficialLink);
+        Button btnBack = findViewById(R.id.btnBack);
+
+        SchemeResult scheme = null;
+        String schemeJson = getIntent().getStringExtra("SCHEME_RESULT_JSON");
+
+        if (schemeJson != null && !schemeJson.isEmpty()) {
+            try {
+                scheme = new Gson().fromJson(schemeJson, SchemeResult.class);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (scheme == null) {
+            try {
+                scheme = (SchemeResult) getIntent().getSerializableExtra("SCHEME_RESULT");
+            } catch (Exception ignored) {
+            }
+        }
+
+        if (scheme != null) {
+            tvSchemeName.setText(scheme.getSchemeName());
+
+            if (scheme.getCategory() != null && !scheme.getCategory().isEmpty()) {
+                tvSchemeCategory.setText("Category: " + scheme.getCategory());
+                tvSchemeCategory.setVisibility(View.VISIBLE);
+            } else {
+                tvSchemeCategory.setVisibility(View.GONE);
+            }
+
+            if (scheme.isEligible()) {
+                tvEligibilityStatus.setText("✔ ELIGIBLE");
+                tvEligibilityStatus.setTextColor(Color.parseColor("#2E7D32"));
+            } else {
+                tvEligibilityStatus.setText("✘ NOT ELIGIBLE");
+                tvEligibilityStatus.setTextColor(Color.parseColor("#D32F2F"));
+            }
+
+            tvSchemeDescription.setText(scheme.getDescription());
+            tvSchemeEligibility.setText(scheme.getFormattedRules());
+            tvSchemeDocuments.setText(scheme.getFormattedRequiredDocuments());
+
+            final String link = scheme.getOfficialLink();
+            if (link != null && !link.trim().isEmpty() && (link.startsWith("http://") || link.startsWith("https://"))) {
+                btnOfficialLink.setVisibility(View.VISIBLE);
+                btnOfficialLink.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+                            startActivity(browserIntent);
+                        } catch (Exception e) {
+                            Toast.makeText(SchemeDetailsActivity.this, "Unable to open link", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            } else {
+                btnOfficialLink.setVisibility(View.GONE);
+            }
+        }
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
+    }
+}
+```
+
+Let's write `SchemeDetailsActivity.java`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

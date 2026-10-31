@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Check Eligibility"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eligibility Assessment"
+                android:textSize="@dimen/text_size_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Please provide your demographic and economic details to evaluate government scheme eligibility."
+                android:textSize="@dimen/text_size_body"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <!-- Section 1: Demographic Info -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Personal &amp; Demographic Information"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <!-- Age -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Age (in years) *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="e.g. 32"
+                        android:inputType="number"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <!-- Gender -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Gender *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/min_touch_target"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:popupBackground="?attr/colorSurface"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingEnd="@dimen/spacing_medium"
+                        android:entries="@array/gender_array" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 2: Location & Occupation -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2. Region &amp; Employment"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <!-- State -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="State / Territory *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spState"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/min_touch_target"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:popupBackground="?attr/colorSurface"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingEnd="@dimen/spacing_medium"
+                        android:entries="@array/state_array" />
+
+                    <!-- Occupation -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Occupation *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spOccupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/min_touch_target"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:popupBackground="?attr/colorSurface"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingEnd="@dimen/spacing_medium"
+                        android:entries="@array/occupation_array" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 3: Income & Land Ownership -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3. Income &amp; Assets"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <!-- Annual Income -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Annual Family Income (₹) *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAnnualIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="e.g. 150000"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <!-- Land Ownership -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Land Ownership Status *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spLandOwnership"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/min_touch_target"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:popupBackground="?attr/colorSurface"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingEnd="@dimen/spacing_medium"
+                        android:entries="@array/land_ownership_array" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 4: Special Status -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4. Special Categories"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <!-- Disability Status -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Disability Status *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spDisability"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/min_touch_target"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:popupBackground="?attr/colorSurface"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingEnd="@dimen/spacing_medium"
+                        android:entries="@array/disability_array" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/pbEligibilityLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnSubmitEligibility"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="Check Scheme Eligibility"
+                android:textSize="@dimen/text_size_subtitle" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

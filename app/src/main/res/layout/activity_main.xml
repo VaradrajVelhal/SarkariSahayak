@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Sarkari Sahayak"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Welcome Header Banner Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_medium"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_shield"
+                        android:contentDescription="Sarkari Sahayak Shield Icon"
+                        app:tint="?attr/colorOnPrimaryContainer" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvWelcomeUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Welcome to Sarkari Sahayak"
+                            android:textSize="@dimen/text_size_title"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnPrimaryContainer" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:text="Government Scheme Eligibility Assistant"
+                            android:textSize="@dimen/text_size_body"
+                            android:textColor="?attr/colorOnPrimaryContainer" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Featured Action: Check Eligibility Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="3dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_assignment"
+                            android:contentDescription="Eligibility Assessment Icon"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:text="Check Scheme Eligibility"
+                            android:textSize="@dimen/text_size_title"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="Evaluate your income, location, occupation, and age against central and state government schemes."
+                        android:textSize="@dimen/text_size_body"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <Button
+                        android:id="@+id/btnCheckEligibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Start Assessment"
+                        android:textSize="@dimen/text_size_subtitle" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Access Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Quick Navigation"
+                android:textSize="@dimen/text_size_subtitle"
+                android:textStyle="bold" />
+
+            <!-- Row 1: Previous Checks & Profile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/spacing_xs"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
+                    app:cardElevation="1dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/card_stroke">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_medium">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_history"
+                            android:contentDescription="Previous Checks Icon"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="Previous Checks"
+                            android:textSize="@dimen/text_size_subtitle"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnPreviousChecks"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="History" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
+                    app:cardElevation="1dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/card_stroke">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_medium">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_person"
+                            android:contentDescription="Profile Icon"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="Profile &amp; Mode"
+                            android:textSize="@dimen/text_size_subtitle"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnProfile"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="Profile" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Row 2: Account Actions (Login / Register / Logout) -->
+            <LinearLayout
+                android:id="@+id/llAccountActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/spacing_xs"
+                    android:text="Login" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:text="Register" />
+
+                <Button
+                    android:id="@+id/btnLogoutHome"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logout Account"
+                    android:textColor="@color/ineligible_red"
+                    app:strokeColor="@color/ineligible_red"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

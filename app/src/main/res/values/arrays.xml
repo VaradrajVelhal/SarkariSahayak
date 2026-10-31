@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_array">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="state_array">
+        <item>Select State</item>
+        <item>Maharashtra</item>
+        <item>Delhi</item>
+        <item>Uttar Pradesh</item>
+        <item>Bihar</item>
+        <item>Karnataka</item>
+        <item>Gujarat</item>
+        <item>Tamil Nadu</item>
+        <item>Madhya Pradesh</item>
+        <item>Rajasthan</item>
+        <item>West Bengal</item>
+        <item>Other State</item>
+    </string-array>
+
+    <string-array name="occupation_array">
+        <item>Select Occupation</item>
+        <item>Farmer</item>
+        <item>Student</item>
+        <item>Salaried Employee</item>
+        <item>Self-Employed / Business</item>
+        <item>Daily Wage Worker / Artisan</item>
+        <item>Unemployed</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="land_ownership_array">
+        <item>Select Land Ownership</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="disability_array">
+        <item>Select Disability Status</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+</resources>

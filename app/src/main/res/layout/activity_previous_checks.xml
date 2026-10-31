@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Previous Checks"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assessment History"
+                android:textSize="@dimen/text_size_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="View your recent scheme eligibility checks."
+                android:textSize="@dimen/text_size_body"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/pbHistoryLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:visibility="gone" />
+
+            <!-- Empty State -->
+            <TextView
+                android:id="@+id/tvEmptyHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:gravity="center"
+                android:text="No eligibility check history found.\nStart an assessment to save your results here."
+                android:textSize="@dimen/text_size_subtitle"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" />
+
+            <!-- Error & Retry State -->
+            <LinearLayout
+                android:id="@+id/llHistoryError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvHistoryErrorMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Unable to load check history."
+                    android:textSize="@dimen/text_size_body"
+                    android:textColor="@color/ineligible_red" />
+
+                <Button
+                    android:id="@+id/btnHistoryRetry"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="Retry" />
+            </LinearLayout>
+
+            <!-- Container for check cards -->
+            <LinearLayout
+                android:id="@+id/llHistoryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Create Account"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Logo Header -->
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:src="@drawable/ic_shield"
+                android:contentDescription="Sarkari Sahayak Shield Icon"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Join Sarkari Sahayak"
+                android:textSize="@dimen/text_size_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:gravity="center"
+                android:text="Sign up to evaluate government schemes and save your results."
+                android:textSize="@dimen/text_size_body"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <!-- Register Form Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Choose a unique username"
+                        android:inputType="text"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Full Name *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Enter your full name"
+                        android:inputType="textPersonName"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Email Address *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEmailReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="e.g. user@example.com"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Password (min 6 characters) *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etPasswordReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Choose a secure password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="Confirm Password *"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etConfirmPasswordReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/input_height"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Re-enter your password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/spacing_medium"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <ProgressBar
+                        android:id="@+id/pbRegisterLoading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnRegisterSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/spacing_large"
+                        android:text="Create Account"
+                        android:textSize="@dimen/text_size_subtitle" />
+
+                    <Button
+                        android:id="@+id/btnGoToLogin"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="Already have an account? Login" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

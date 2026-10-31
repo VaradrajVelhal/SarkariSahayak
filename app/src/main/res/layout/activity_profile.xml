@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Profile &amp; Settings"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Profile Avatar & Identity Header -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:src="@drawable/ic_person"
+                app:tint="?attr/colorPrimary"
+                android:contentDescription="User Profile Avatar" />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Guest User"
+                android:textSize="@dimen/text_size_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Not logged in"
+                android:textSize="@dimen/text_size_body"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <!-- User Account Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account Details"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="User Role"
+                        android:textSize="@dimen/text_size_caption"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tvUserType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Citizen Applicant"
+                        android:textSize="@dimen/text_size_body"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Theme Preference Settings Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_stroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appearance &amp; Theme"
+                        android:textSize="@dimen/text_size_subtitle"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="Choose your preferred app theme mode:"
+                        android:textSize="@dimen/text_size_body"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <RadioGroup
+                        android:id="@+id/rgThemeMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small">
+
+                        <RadioButton
+                            android:id="@+id/rbThemeSystem"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/min_touch_target"
+                            android:text="System Default"
+                            android:textSize="@dimen/text_size_body" />
+
+                        <RadioButton
+                            android:id="@+id/rbThemeLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/min_touch_target"
+                            android:text="Light Theme"
+                            android:textSize="@dimen/text_size_body" />
+
+                        <RadioButton
+                            android:id="@+id/rbThemeDark"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/min_touch_target"
+                            android:text="Dark Theme"
+                            android:textSize="@dimen/text_size_body" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Logout Button -->
+            <Button
+                android:id="@+id/btnLogout"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="Logout Account"
+                android:textColor="@color/ineligible_red"
+                app:strokeColor="@color/ineligible_red" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
